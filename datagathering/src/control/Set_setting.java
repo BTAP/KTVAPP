@@ -53,7 +53,7 @@ public class Set_setting extends File_IO  {
 			int i = 0;
 	        while ( csv_row[i] != null ) {
 	        	String[] column = csv_row[i].split(",");
-	        	access.insert_company(column[i]);
+	        	access.insert_company(column[0]);
 	          	i++;
 	        }
 	        
