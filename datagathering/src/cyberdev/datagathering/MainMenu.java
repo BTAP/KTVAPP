@@ -147,12 +147,17 @@ public class MainMenu extends Activity {
 			    
 				List<String[]> Register_records = data_reg.get_Registers();
 				
-		        int result = reg_file.write_to_file(Register_records);
-		        if (result == 0 ) {// is register file
-			       	
-			       	 Toast.makeText(getApplicationContext(),R.string.is_saved, Toast.LENGTH_LONG).show();
-			       	 access.update_v_export(Integer.parseInt(Vars.V_Export)+1);
-			    }
+				if(Register_records.size()>=1){//check data base (data count) 
+					
+			        int result = reg_file.write_to_file(Register_records);
+			        if (result == 0 ) {// is register file
+				       	 Toast.makeText(getApplicationContext(),R.string.is_saved, Toast.LENGTH_LONG).show();
+				       	 access.update_v_export(Integer.parseInt(Vars.V_Export)+1);
+				    }
+		        }else{
+		         	 Toast.makeText(getApplicationContext(),R.string.db_is_null, Toast.LENGTH_LONG).show();
+		        }
+				
 			}catch(Exception e){}
 			
 		}

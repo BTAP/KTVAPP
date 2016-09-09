@@ -87,5 +87,7 @@
     <string name="title_activity_description">Description</string>
 	<string name="done">عملیات انجام شد</string>
     <string name="not_find_file">مشکل در خواندن فایل</string>
-	
+	<string name="db_is_null">اطلاعات ثیت نشده است</string>
+    
+    
 </resources>
