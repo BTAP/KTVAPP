@@ -8,9 +8,9 @@ public class Vars {
 	public static final String Register_folder= Environment.getExternalStorageDirectory()+"/KTV";
 	
 	public static final String Type_path= Environment.getExternalStorageDirectory()+"/KTV/Type.csv";
-	public static final String Company_path= Environment.getExternalStorageDirectory()+"/KTV";
-	public static final String Application_path= Environment.getExternalStorageDirectory()+"/KTV";
-	public static final String Ancill_path= Environment.getExternalStorageDirectory()+"/KTV";
+	public static final String Company_path= Environment.getExternalStorageDirectory()+"/KTV/Company.csv";
+	public static final String Application_path= Environment.getExternalStorageDirectory()+"/KTV/Application.csv";
+	public static final String Ancill_path= Environment.getExternalStorageDirectory()+"/KTV/Ancillary.csv";
 	
 	public static String Inlet_pressure;
 	public static String Inlet_temprature;
