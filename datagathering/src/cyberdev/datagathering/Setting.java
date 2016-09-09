@@ -187,7 +187,7 @@ OnClickListener btn_company_save = new OnClickListener() {
 				txt_Company.setText("");
 				*/
 				Set_setting set = new Set_setting(); 
-				int result =set.read_company_file(contx); 
+				int result = set.read_company_file(contx); 
 				if(result == 1){
 					
 					Toast.makeText(getApplicationContext(), R.string.done, Toast.LENGTH_LONG).show();
