@@ -17,7 +17,7 @@ public class Access {
 	Database db; 
 	
 	public Access(Context cotx){
-		db=new Database("ktv_data_setting_v1", cotx); 
+		db=new Database("ktv_data_setting_v2", cotx); 
 	}
 	
 	public void create_all_tbl(){
@@ -28,7 +28,7 @@ public class Access {
 		db.create_table("Temprature_unit", "id INTEGER PRIMARY KEY AUTOINCREMENT,unit TEXT NOT NULL");
 		db.create_table("Type", "'id' INTEGER PRIMARY KEY,'name' TEXT NOT NULL,'parent' INTEGER NOT NULL");
 		db.create_table("Company", "id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL");
-		db.create_table("Ancillary", "id INTEGER PRIMARY KEY,name TEXT NOT NULL");
+		db.create_table("Ancillary", "id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL");
 		db.create_table("Position", "id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL");
 		db.create_table("Connection", "id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL");
 		db.create_table("Size", "'id' INTEGER PRIMARY KEY AUTOINCREMENT,'name' TEXT NOT NULL,'parent' INTEGER NOT NULL");
@@ -174,9 +174,9 @@ public class Access {
 		db.insert("Application", "id , name , parent", id + " , '"+name+"' , "+parent);
 	}
 	
-	public void insert_Ancillary(String name , String parent , String id){
+	public void insert_Ancillary(String name){
 	
-	db.insert("Ancillary", "id , name , parent", id + " , '"+name+"' , "+parent);
+	db.insert("Ancillary", "name", "'"+name+"'");
 	}
 	
 	public List<String[]> get_setting(){
