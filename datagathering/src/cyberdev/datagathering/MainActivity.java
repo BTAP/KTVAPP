@@ -1,5 +1,6 @@
 package cyberdev.datagathering;
 
+import java.io.File;
 import java.security.AccessControlContext;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +72,14 @@ public class MainActivity extends Activity {
 	    		access.create_all_tbl();
 		    	access.setdefult();
 	    	}
-	    //_____________end create database 
+	    //_____________end create database
+	    	
+	    	try{
+	    		File directory = new File(Vars.Register_folder);
+	    		directory.mkdirs();
+	    	}catch(Exception e){
+	    		
+	    	}
 	    
 	 /*   	
 	    	//_________________ test register
