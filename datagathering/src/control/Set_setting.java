@@ -103,8 +103,7 @@ public class Set_setting extends File_IO  {
 		String []  csv_row = new String[100];
 		
 		Access access = new Access(cotx);
-		access.del_type();
-		int id_counter = 1 ; 
+		access.del_Ancillary(); 
 	    try {
 			csv_row = this.readFromFile(Vars.Ancill_path);
 			int i = 0;
