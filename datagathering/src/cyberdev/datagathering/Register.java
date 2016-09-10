@@ -76,6 +76,8 @@ public class Register extends Activity{
 	Button btn_return;
 	Button btn_clear;
 	Button btn_Attachment;
+	Button btn_show_type; 
+	Button btn_show_ancill;
 	
 	List<String> items_inlet_presure;
 	List<String> items_inlet_temprature ;
@@ -286,6 +288,14 @@ public class Register extends Activity{
 		btn_Attachment = (Button) findViewById(R.id.btn_Attachment);
 		btn_Attachment = ui.button(btn_Attachment, 100, 100, col2, row13);
 		btn_Attachment.setOnClickListener(btn_attach);
+
+		btn_show_type = (Button) findViewById(R.id.btn_show_type);
+		btn_show_type = ui.button(btn_show_type, w_btn, 100, col3, row5);
+		btn_show_type.setOnClickListener(btn_show_type_onclick);
+
+		btn_show_ancill = (Button) findViewById(R.id.btn_show_ancill);
+		btn_show_ancill = ui.button(btn_show_ancill, w_btn, 100, col3, row9);
+		btn_show_ancill.setOnClickListener(btn_show_ancill_onclick);
 
 		// btn_select = (Button) findViewById(R.id.btn_select);
 		// btn_select = ui.button(btn_select, 100, 100, col2, row9);
@@ -563,6 +573,29 @@ public class Register extends Activity{
 			}
 			
 			
+		}
+	};
+	
+	OnClickListener btn_show_type_onclick = new OnClickListener() {
+		
+		@Override
+		public void onClick(View arg0) {
+			if( Vars.Type != null){
+				Toast.makeText(getApplicationContext(), Vars.Type, 
+					   Toast.LENGTH_LONG).show();	
+			}
+		}
+	};
+	
+	OnClickListener btn_show_ancill_onclick = new OnClickListener() {
+		
+		@Override
+		public void onClick(View arg0) {
+			
+			if(Vars.Ancillary_Equipment != null ){
+				Toast.makeText(getApplicationContext(), Vars.Ancillary_Equipment, 
+					   Toast.LENGTH_LONG).show();	
+			}
 		}
 	};
 	

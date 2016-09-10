@@ -88,6 +88,6 @@
 	<string name="done">عملیات انجام شد</string>
     <string name="not_find_file">مشکل در خواندن فایل</string>
 	<string name="db_is_null">اطلاعات ثیت نشده است</string>
-    
+	<string name="show">نمایش</string>    
     
 </resources>
