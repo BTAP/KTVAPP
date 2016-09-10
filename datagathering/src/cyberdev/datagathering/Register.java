@@ -106,6 +106,9 @@ public class Register extends Activity{
 		int height = displaymetrics.heightPixels;
 		int width = displaymetrics.widthPixels;
 		GlobalAccess.ui = new ui(width, height);
+		
+		//____________________init form_flags
+		Vars.is_loading_form_type = false;
 
 		// ___________________init cols GUI
 		int col1 = 42;
@@ -485,17 +488,21 @@ public class Register extends Activity{
 		@Override
 		public void onItemSelected(AdapterView<?> arg0, View arg1, int position,
 				long arg3) {
-			if(GlobalAccess.type_parent_id==-1){
-				GlobalAccess.type_parent_id=position+1;
-			}else {
-				
-				Vars.Type = spi_Type.getSelectedItem().toString()+" , ";
-				
-				Intent intent = new Intent(Register.this, Slector.class);
-				intent.putExtra("selector", 1);
-				intent.putExtra("type_id", position+1);
-				startActivity(intent);
-				
+			if(Vars.is_loading_form_type){
+				if(GlobalAccess.type_parent_id==-1){
+					GlobalAccess.type_parent_id=position+1;
+				}else {
+					
+					Vars.Type = spi_Type.getSelectedItem().toString()+" , ";
+					
+					Intent intent = new Intent(Register.this, Slector.class);
+					intent.putExtra("selector", 1);
+					intent.putExtra("type_id", position+1);
+					startActivity(intent);
+					
+				}
+			}else{
+				Vars.is_loading_form_type=true;
 			}
 		}
 
