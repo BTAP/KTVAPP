@@ -24,10 +24,10 @@ public class Set_setting extends File_IO  {
 		        while ( csv_row[i] != null ) {
 		        	String[] column = csv_row[i].split(",");
 		    		int parent_id = id_counter ;
-		        	access.insert_type(column[0], "0" , String.valueOf(id_counter));
+		        	access.insert_type(column[0], "0");
 		        	id_counter++; 
 		        	for(int j = 1 ; j< column.length ; j++ ){
-		        		access.insert_type(column[j], String.valueOf(parent_id) , String.valueOf(id_counter));
+		        		access.insert_type(column[j], String.valueOf(parent_id));
 		        		id_counter++; 
 		        	}
 		        	i++;
@@ -79,10 +79,10 @@ public class Set_setting extends File_IO  {
 	        while ( csv_row[i] != null ) {
 	        	String[] column = csv_row[i].split(",");
 	    		int parent_id = id_counter ;
-	        	access.insert_Application(column[0], "0" , String.valueOf(id_counter));
+	        	access.insert_Application(column[0], "0");
 	        	id_counter++; 
 	        	for(int j = 1 ; j< column.length ; j++ ){
-	        		access.insert_Application(column[j], String.valueOf(parent_id) , String.valueOf(id_counter));
+	        		access.insert_Application(column[j], String.valueOf(parent_id));
 	        		id_counter++; 
 	        	}
 	        	i++;

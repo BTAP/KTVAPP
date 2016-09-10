@@ -95,36 +95,36 @@ public class Setting extends Activity {
 		lbl_Setting = ui.textview(lbl_Setting, 400, 10, 60);
 		lbl_Setting.setTypeface(Bnazanin);
 
-		lbl_Type = (TextView) findViewById(R.id.lbl_Type);
-		lbl_Type = ui.textview(lbl_Type, col1, row2, 45);
-		lbl_Type.setTypeface(Bnazanin);
+		//lbl_Type = (TextView) findViewById(R.id.lbl_Type);
+		//lbl_Type = ui.textview(lbl_Type, col1, row2, 45);
+		//lbl_Type.setTypeface(Bnazanin);
 
 		lbl_Company = (TextView) findViewById(R.id.lbl_Company);
-		lbl_Company = ui.textview(lbl_Company, col1, row4, 45);
+		lbl_Company = ui.textview(lbl_Company, col1, row2, 45);
 		lbl_Company.setTypeface(Bnazanin);
 		
-		lbl_Application = (TextView) findViewById(R.id.lbl_Application);
-		lbl_Application = ui.textview(lbl_Application, col1, row6, 45);
-		lbl_Application.setTypeface(Bnazanin);
+		//lbl_Application = (TextView) findViewById(R.id.lbl_Application);
+		//lbl_Application = ui.textview(lbl_Application, col1, row6, 45);
+		//lbl_Application.setTypeface(Bnazanin);
 		
 		lbl_Ancillary_Equipment = (TextView) findViewById(R.id.lbl_Ancillary_Equipment);
-		lbl_Ancillary_Equipment = ui.textview(lbl_Ancillary_Equipment, col1, row8, 45);
+		lbl_Ancillary_Equipment = ui.textview(lbl_Ancillary_Equipment, col1, row4, 45);
 		lbl_Ancillary_Equipment.setTypeface(Bnazanin);
 		
-		btn_Type = (Button) findViewById(R.id.btn_Type);
-		btn_Type = ui.button(btn_Type, w_btn, h_btn, col3, row2);
-		btn_Type.setOnClickListener(btn_type_save);
+		//btn_Type = (Button) findViewById(R.id.btn_Type);
+		//btn_Type = ui.button(btn_Type, w_btn, h_btn, col3, row2);
+		//btn_Type.setOnClickListener(btn_type_save);
 		
 		btn_Company = (Button) findViewById(R.id.btn_Company);
-		btn_Company = ui.button(btn_Company, w_btn, h_btn, col3, row4);
+		btn_Company = ui.button(btn_Company, w_btn, h_btn, col3, row2);
 		btn_Company.setOnClickListener(btn_company_save);
 		
-		btn_Application = (Button) findViewById(R.id.btn_Application);
-		btn_Application = ui.button(btn_Application, w_btn, h_btn, col3, row6);
-		btn_Application.setOnClickListener(btn_application_save);
+		//btn_Application = (Button) findViewById(R.id.btn_Application);
+		//btn_Application = ui.button(btn_Application, w_btn, h_btn, col3, row6);
+		//btn_Application.setOnClickListener(btn_application_save);
 		
 		btn_Ancillary_Equipment = (Button) findViewById(R.id.btn_Ancillary_Equipment);
-		btn_Ancillary_Equipment = ui.button(btn_Ancillary_Equipment, w_btn, h_btn, col3, row8);
+		btn_Ancillary_Equipment = ui.button(btn_Ancillary_Equipment, w_btn, h_btn, col3, row4);
 		btn_Ancillary_Equipment.setOnClickListener(btn_ancill_save);
 
 		btn_return = (Button) findViewById(R.id.btn_return);

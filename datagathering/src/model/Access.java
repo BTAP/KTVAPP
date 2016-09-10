@@ -17,16 +17,18 @@ public class Access {
 	Database db; 
 	
 	public Access(Context cotx){
-		db=new Database("ktv_data_setting_v2", cotx); 
+		db=new Database("ktv_data_setting_v3", cotx); 
 	}
 	
 	public void create_all_tbl(){
 		
 		db.create_table("Pressure_unit", "id INTEGER PRIMARY KEY AUTOINCREMENT, unit TEXT NOT NULL");
 		db.create_table("Setting", "'id' INTEGER PRIMARY KEY AUTOINCREMENT, 'data_set' INTEGER NOT NULL, 'V_Export' INTEGER NOT NULL");
-		db.create_table("Application", "'id' INTEGER PRIMARY KEY,'name' TEXT NOT NULL,'parent' INTEGER NOT NULL");
+		//db.create_table("Application", "'id' INTEGER PRIMARY KEY,'name' TEXT NOT NULL,'parent' INTEGER NOT NULL");
+		db.create_table("Application", "'id' INTEGER PRIMARY KEY AUTOINCREMENT,'name' TEXT NOT NULL,'parent' INTEGER NOT NULL");
 		db.create_table("Temprature_unit", "id INTEGER PRIMARY KEY AUTOINCREMENT,unit TEXT NOT NULL");
-		db.create_table("Type", "'id' INTEGER PRIMARY KEY,'name' TEXT NOT NULL,'parent' INTEGER NOT NULL");
+		//db.create_table("Type", "'id' INTEGER PRIMARY KEY,'name' TEXT NOT NULL,'parent' INTEGER NOT NULL");
+		db.create_table("Type", "'id' INTEGER PRIMARY KEY AUTOINCREMENT,'name' TEXT NOT NULL,'parent' INTEGER NOT NULL");
 		db.create_table("Company", "id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL");
 		db.create_table("Ancillary", "id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL");
 		db.create_table("Position", "id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL");
@@ -42,7 +44,6 @@ public class Access {
 		//================Temprature_unit====================
 		db.insert("Temprature_unit","unit", "'C'");
 		db.insert("Temprature_unit","unit", "'F'");
-		/*
 		//================Application=======================
 		db.insert("Application", "name , parent", "'Drip',0");
 		db.insert("Application", "name , parent", "'Heating',0");
@@ -68,6 +69,7 @@ public class Access {
 			db.insert("Type", "name , parent", "'Disk Type' , 3");
 			db.insert("Type", "name , parent", "'TD' , 3");
 		db.insert("Type", "name , parent", "'Orifice Type' , 0");
+		/*
 		//=================Company==========================
 		db.insert("Company", "name", "'MIYAWAKI'");
 		db.insert("Company", "name", "'TLV'");
@@ -159,9 +161,9 @@ public class Access {
 		db.update("Setting", " V_Export="+new_v_export, "1");
 	}
 
-	public void insert_type(String name , String parent , String id){
+	public void insert_type(String name , String parent){
 		
-		db.insert("Type", "id , name , parent", id + " , '"+name+"' , "+parent);
+		db.insert("Type", " name , parent","'"+name+"' , "+parent);
 	}
 	
 	public void insert_company(String name){
@@ -169,9 +171,9 @@ public class Access {
 		db.insert("Company", "name", "'"+name+"'");
 	}
 	
-	public void insert_Application(String name , String parent , String id){
+	public void insert_Application(String name , String parent){
 		
-		db.insert("Application", "id , name , parent", id + " , '"+name+"' , "+parent);
+		db.insert("Application", "id , name , parent","'"+name+"' , "+parent);
 	}
 	
 	public void insert_Ancillary(String name){
