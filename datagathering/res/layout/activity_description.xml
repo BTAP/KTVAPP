@@ -21,22 +21,14 @@
     
      <TextView
         android:id="@+id/txt_dec"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_x="98dp"
         android:layout_y="2dp"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" 
-        android:textColor="@color/white_color"/>
-    
-      <Button
-        android:id="@+id/btn_return"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="14dp"
-        android:layout_y="400dp"
-        android:text="@string/sreturn"
-        android:background="@color/btn"
-        android:textColor="@color/white_color" />
+        android:textColor="@color/white_color"
+		android:scrollbars = "vertical"
+         />
     
 </AbsoluteLayout>

@@ -6,12 +6,14 @@ import control.ui;
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Typeface;
+import android.text.method.ScrollingMovementMethod;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.widget.AbsoluteLayout;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,7 +23,7 @@ public class Description extends Activity {
 	TextView lbl_title ; 
 	TextView txt_dec; 
 	
-	Button btn_return;
+//	Button btn_return;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,23 +60,33 @@ public class Description extends Activity {
 		lbl_title.setTypeface(Bnazanin);
 		
 		txt_dec = (TextView) findViewById(R.id.txt_dec);
-		txt_dec = ui.textview(txt_dec , col1 , row5 , 45);
+		txt_dec = ui.textview(txt_dec , col1 , row2 , 40);
+		
+		txt_dec.getLayoutParams().width = (int) ((width)-(100 *ui.width_ratio));
+		txt_dec.getLayoutParams().height = (int) ((height )-(row2 * ui.height_ratio));
+		AbsoluteLayout.LayoutParams position = (AbsoluteLayout.LayoutParams) txt_dec
+				.getLayoutParams();
+		position.x = (int) (col1 * ui.width_ratio);
+		position.y = (int) (row2 * ui.height_ratio);
+		txt_dec.setLayoutParams(position);
+		
 		txt_dec.setTypeface(Bnazanin);
 		
-		
-		
-		btn_return = (Button) findViewById(R.id.btn_return);
+		txt_dec.setMovementMethod(new ScrollingMovementMethod());
+	/*	btn_return = (Button) findViewById(R.id.btn_return);
 		btn_return = ui.button(btn_return, w_btn, h_btn, col1, row2);
 		btn_return.setOnClickListener(btn_return_onclick);
-		
+		*/
 		int page_type =Vars.page_type;
 
 		switch (page_type) {
 		case 1:
 			txt_dec.setText(Vars.Help);
+			lbl_title.setText(R.string.lbl_help);
 			break;
 		case 2: 
 			txt_dec.setText(Vars.About);
+			lbl_title.setText(R.string.lbl_about);
 			break;
 		}
 		
