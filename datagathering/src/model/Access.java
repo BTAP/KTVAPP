@@ -17,7 +17,7 @@ public class Access {
 	Database db; 
 	
 	public Access(Context cotx){
-		db=new Database("ktv_data_setting_v3", cotx); 
+		db=new Database("ktv_data_setting_v4", cotx); 
 	}
 	
 	public void create_all_tbl(){
@@ -69,7 +69,7 @@ public class Access {
 			db.insert("Type", "name , parent", "'Disk Type' , 3");
 			db.insert("Type", "name , parent", "'TD' , 3");
 		db.insert("Type", "name , parent", "'Orifice Type' , 0");
-		/*
+		
 		//=================Company==========================
 		db.insert("Company", "name", "'MIYAWAKI'");
 		db.insert("Company", "name", "'TLV'");
@@ -97,7 +97,6 @@ public class Access {
 		db.insert("Ancillary", "name", "'BP'");
 		db.insert("Ancillary", "name", "'SG'");
 		db.insert("Ancillary", "name", "'DV'");
-		*/
 		//====================Position================
 		db.insert("Position", "name", "'Vertical'");
 		db.insert("Position", "name", "'Horizontal'");

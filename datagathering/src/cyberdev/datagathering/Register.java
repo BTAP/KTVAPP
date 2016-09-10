@@ -349,6 +349,7 @@ public class Register extends Activity{
         spi_Application.setOnItemSelectedListener(onselected_application);
         
         List<String> type_tem = new ArrayList<String>(); 
+        type_tem.add(""); 
         for(int i=0 ; i<items_type.size(); i++){
         	type_tem.add(items_type.get(i)[1]); 
         }
@@ -397,6 +398,7 @@ public class Register extends Activity{
 		
 		
         clr_form();
+        Vars.is_loading_form_type=true; 
 
 	}
 	
@@ -488,16 +490,16 @@ public class Register extends Activity{
 		@Override
 		public void onItemSelected(AdapterView<?> arg0, View arg1, int position,
 				long arg3) {
-			if(Vars.is_loading_form_type){
+			if(Vars.is_loading_form_type && !(spi_Type.getSelectedItem().toString().equalsIgnoreCase(""))){
 				if(GlobalAccess.type_parent_id==-1){
-					GlobalAccess.type_parent_id=position+1;
+					GlobalAccess.type_parent_id=position;
 				}else {
 					
 					Vars.Type = spi_Type.getSelectedItem().toString()+" , ";
 					
 					Intent intent = new Intent(Register.this, Slector.class);
 					intent.putExtra("selector", 1);
-					intent.putExtra("type_id", position+1);
+					intent.putExtra("type_id", position);
 					startActivity(intent);
 					
 				}

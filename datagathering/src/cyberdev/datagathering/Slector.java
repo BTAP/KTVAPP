@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.widget.AbsoluteLayout;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
@@ -65,27 +66,29 @@ public class Slector extends Activity{
 		GlobalAccess.ui = new ui(width, height);
 		
 		// ___________________init cols GUI
-				int col2 = 370;
-				// ___________________init rows GUI
-				int row14 = 1398;
-				// ______________________
-				int w_btn = 252;
-				int h_btn = 144;
-				// ____________________init font_face
-				Typeface Bnazanin = Typeface.createFromAsset(getAssets(),
-						"font/BNazanin.ttf");
-				// ____________________init GUI	
-				
-				lbl_selector = (TextView) findViewById(R.id.lbl_selector);
-				lbl_selector = ui.textview(lbl_selector, 400, 10, 60);
-				lbl_selector.setTypeface(Bnazanin);
-				
-				
-				//________________
-				btn_ok = (Button) findViewById(R.id.btn_ok_selector);
-				btn_ok = ui.button(btn_ok, w_btn, h_btn, col2, row14);
-				btn_ok.setOnClickListener(btn_ok_onclick);
-				
+		int col1 = 42;
+		int col2 = 370;
+		// ___________________init rows GUI
+		int row1 = 98;
+		int row14 = 1398;
+		// ______________________
+		int w_btn = 252;
+		int h_btn = 144;
+		// ____________________init font_face
+		Typeface Bnazanin = Typeface.createFromAsset(getAssets(),
+				"font/BNazanin.ttf");
+		// ____________________init GUI	
+		
+		lbl_selector = (TextView) findViewById(R.id.lbl_selector);
+		lbl_selector = ui.textview(lbl_selector, 400, 10, 60);
+		lbl_selector.setTypeface(Bnazanin);
+		
+		
+		//________________
+		btn_ok = (Button) findViewById(R.id.btn_ok_selector);
+		btn_ok = ui.button(btn_ok, w_btn, h_btn, col2, row14);
+		btn_ok.setOnClickListener(btn_ok_onclick);
+		
 		
 		ll_selector = (LinearLayout) findViewById(R.id.linearlayout_selector);
 		
@@ -94,21 +97,16 @@ public class Slector extends Activity{
 		
 		page_type = getIntent().getExtras().getInt("selector");
 		
-		
-		
-		
-		
 		if(page_type==1){
 			
 			lbl_selector.setText("Type");
 			type_id = getIntent().getExtras().getInt("type_id");
 			items_type = access.get_Type(type_id);
 			items_checkbox=new ArrayList<String>(); 
-		        for(int i=0 ; i<items_type.size(); i++){
-		        	items_checkbox.add(items_type.get(i)[1]); 
-		        }
-		    
-					
+	        for(int i=0 ; i<items_type.size(); i++){
+	        	items_checkbox.add(items_type.get(i)[1]); 
+	        }
+	    		
 		}else{
 			//items_checkbox.clear();
 			lbl_selector.setText("Ancillary");
@@ -118,14 +116,22 @@ public class Slector extends Activity{
 			
 		try{
 			lst_check_box = new ArrayList<CheckBox>(); 
+			LinearLayout ll1 = new LinearLayout(getApplicationContext());
+			ll1.setOrientation(LinearLayout.VERTICAL);
+			
+			TextView txt = new TextView(getApplicationContext()); 
+			txt.setText("\n");
+			txt.setLayoutParams(params);
+			ll1.addView(txt);
+			ll_selector.addView(ll1);
+			
 			for( int j=0 ; j < items_checkbox.size() ; j++){
 				
 				LinearLayout ll = new LinearLayout(getApplicationContext());
-				ll.setOrientation(LinearLayout.VERTICAL);
+				ll.setOrientation(LinearLayout.VERTICAL);	
 				
 				//-----checkbox
 				CheckBox cb = new CheckBox(getApplicationContext());
-				//cb.setId(id);
 				cb.setText(items_checkbox.get(j));
 				cb.setTextColor(getResources().getColor(R.color.white_color));
 				cb.setLayoutParams(params);
