@@ -30,12 +30,12 @@
     <string-array name="Company_arrays"></string-array>
 
     <string name="app_name">کیوان تجارت والا</string>
-    <string name="hello_world">انتخاب فابل</string>
+    <string name="hello_world">انتخاب فایل</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main_menu">MainMenu</string>
     <string name="title_activity_register">Register</string>
     <string name="title_activity_help">Help</string>
-    <string name="title_activity_slector">Slector</string>
+    <string name="title_activity_slector">Selector</string>
     <string name="title_activity_setting">Setting</string>
     <string name="title_activity_transfer_server">Transfer Server</string>
     <string name="title_activity_about_me">About Me</string>
@@ -58,7 +58,7 @@
     <string name="Size">Size</string>
     <string name="Ancillary_Equipment">Ancillary Equipment</string>
     <string name="Company">Company</string>
-    <string name="Other">Nots</string>
+    <string name="Other">Notes</string>
     <string name="Attachment">Attachment</string>
     <string name="sreturn">بازگشت</string>
     <string name="remove_info">حذف اطلاعات</string>
@@ -87,7 +87,7 @@
     <string name="title_activity_description">Description</string>
 	<string name="done">عملیات انجام شد</string>
     <string name="not_find_file">مشکل در خواندن فایل</string>
-	<string name="db_is_null">اطلاعات ثیت نشده است</string>
+	<string name="db_is_null">اطلاعات ثبت نشده است</string>
 	<string name="show">نمایش</string>    
     
 </resources>
