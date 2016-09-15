@@ -54,6 +54,8 @@ public class Register extends Activity{
 	TextView lbl_Other;
 	TextView lbl_Attachment;
 	TextView txt_attachment_files ; 
+	TextView txt_show_type; 
+	TextView txt_show_ancill;
 
 	EditText txt_Inlet_pressure;
 	EditText txt_Inlet_temprature;
@@ -77,8 +79,8 @@ public class Register extends Activity{
 	Button btn_return;
 	Button btn_clear;
 	Button btn_Attachment;
-	Button btn_show_type; 
-	Button btn_show_ancill;
+//	Button btn_show_type; 
+//	Button btn_show_ancill;
 	
 	List<String> items_inlet_presure;
 	List<String> items_inlet_temprature ;
@@ -141,7 +143,8 @@ public class Register extends Activity{
 		int h_spi_col3 = 72;
 		int w_spi_col2 = 324;
 		int h_spi_col2 = 72;
-
+		//_______________________
+		final int font_size = 50;
 		// ______________________
 		int w_btn = 252;
 		int h_btn = 144;
@@ -205,7 +208,7 @@ public class Register extends Activity{
 		lbl_Attachment.setTypeface(Bnazanin);
 		
 		txt_attachment_files = (TextView) findViewById(R.id.txt_attachment_files);
-		txt_attachment_files = ui.textview(txt_attachment_files, col3, row13, 50);
+		txt_attachment_files = ui.textview(txt_attachment_files, col3, row13, font_size);
 		//txt_attachment_files.setTypeface(Bnazanin);
 
 		txt_Inlet_pressure = (EditText) findViewById(R.id.txt_Inlet_pressure);
@@ -222,6 +225,16 @@ public class Register extends Activity{
 
 		txt_Other = (EditText) findViewById(R.id.txt_Other);
 		txt_Other = ui.edittext(txt_Other, 584, 136, col2, row11);
+		
+		txt_show_type = (TextView) findViewById(R.id.btn_show_type);
+		txt_show_type = ui.textview(txt_show_type,col3, row5,font_size);
+		txt_show_type.setOnClickListener(btn_show_type_onclick);
+		txt_show_type.setText("\ud83d\udcce");
+		
+		txt_show_ancill = (TextView) findViewById(R.id.btn_show_ancill);
+		txt_show_ancill = ui.textview(txt_show_ancill, col3, row9, font_size); 
+		txt_show_ancill.setOnClickListener(btn_show_ancill_onclick);
+		txt_show_ancill.setText("\ud83d\udcce");
 
 		spi_Inlet_pressure = (Spinner) findViewById(R.id.spi_Inlet_pressure);
 		spi_Inlet_pressure = ui.spinner(spi_Inlet_pressure, w_spi_col3,
@@ -289,16 +302,6 @@ public class Register extends Activity{
 		btn_Attachment = (Button) findViewById(R.id.btn_Attachment);
 		btn_Attachment = ui.button(btn_Attachment, 100, 100, col2, row13);
 		btn_Attachment.setOnClickListener(btn_attach);
-
-		btn_show_type = (Button) findViewById(R.id.btn_show_type);
-		btn_show_type = ui.button(btn_show_type, 100, 100, col3, row5);
-		btn_show_type.setOnClickListener(btn_show_type_onclick);
-		btn_show_type.setText("\ud83d\udcce");
-		
-		btn_show_ancill = (Button) findViewById(R.id.btn_show_ancill);
-		btn_show_ancill = ui.button(btn_show_ancill, 100, 100, col3, row9);
-		btn_show_ancill.setOnClickListener(btn_show_ancill_onclick);
-		btn_show_ancill.setText("\ud83d\udcce");
 
 		// btn_select = (Button) findViewById(R.id.btn_select);
 		// btn_select = ui.button(btn_select, 100, 100, col2, row9);
