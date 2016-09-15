@@ -17,10 +17,12 @@ public class Vars {
 	public static String Outlet_pressure;
 	public static String Application;
 	public static String Type;
+	public static String last_Type;
 	public static String Position;
 	public static String Connection;
 	public static String Size;
 	public static String Ancillary_Equipment;
+	public static String last_Ancillary_Equipment;
 	public static String Company;
 	public static String Nots; 
 	public static String Attachment; 
