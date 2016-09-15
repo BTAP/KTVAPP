@@ -50,6 +50,9 @@ public class Slector extends Activity{
 	Access access = new Access(this);
 	
 	
+	String tem_value ;
+	
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +113,7 @@ public class Slector extends Activity{
 		        if(Vars.last_Type.trim() != "" || Vars.last_Type!= null ){
 		        	Toast.makeText(getApplicationContext(), Vars.last_Type, 
 						   Toast.LENGTH_LONG).show();	
+	        		tem_value = Vars.last_Type; 	
 		        }
 	        }catch(Exception e){}
 	    		
@@ -120,7 +124,8 @@ public class Slector extends Activity{
 			try{
 				if(Vars.last_Ancillary_Equipment.trim() != "" || Vars.last_Ancillary_Equipment != null ){		        
 					Toast.makeText(getApplicationContext(), Vars.last_Ancillary_Equipment, 
-						   Toast.LENGTH_LONG).show();	
+						   Toast.LENGTH_LONG).show();
+					tem_value = Vars.last_Ancillary_Equipment;
 				}
 			}catch(Exception e){} 
 		}
@@ -132,7 +137,7 @@ public class Slector extends Activity{
 			ll1.setOrientation(LinearLayout.VERTICAL);
 			
 			TextView txt = new TextView(getApplicationContext()); 
-			txt.setText("\n\n\n");
+			txt.setText("\n\n"+"شما در حال حاضر موارد زیر را انتخاب کر ده اید"+"\n"+tem_value+"\n");
 			txt.setLayoutParams(params);
 			ll1.addView(txt);
 			ll_selector.addView(ll1);

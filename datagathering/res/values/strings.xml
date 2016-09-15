@@ -89,5 +89,6 @@
     <string name="not_find_file">مشکل در خواندن فایل</string>
 	<string name="db_is_null">اطلاعات ثبت نشده است</string>
 	<string name="show">نمایش</string>    
+	<string name="current_select">شما در حال حاضر موارد زیر را انتخاب کرده اید</string>  
     
 </resources>
