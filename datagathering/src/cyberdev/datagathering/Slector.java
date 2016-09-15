@@ -120,7 +120,7 @@ public class Slector extends Activity{
 			ll1.setOrientation(LinearLayout.VERTICAL);
 			
 			TextView txt = new TextView(getApplicationContext()); 
-			txt.setText("\n");
+			txt.setText("\n\n\n");
 			txt.setLayoutParams(params);
 			ll1.addView(txt);
 			ll_selector.addView(ll1);

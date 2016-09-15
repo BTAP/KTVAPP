@@ -9,6 +9,7 @@ import control.ui;
 import model.Access;
 import model.DataEntry;
 import android.os.Bundle;
+import android.os.Handler;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -290,12 +291,14 @@ public class Register extends Activity{
 		btn_Attachment.setOnClickListener(btn_attach);
 
 		btn_show_type = (Button) findViewById(R.id.btn_show_type);
-		btn_show_type = ui.button(btn_show_type, w_btn, 100, col3, row5);
+		btn_show_type = ui.button(btn_show_type, 100, 100, col3, row5);
 		btn_show_type.setOnClickListener(btn_show_type_onclick);
-
+		btn_show_type.setText("\ud83d\udcce");
+		
 		btn_show_ancill = (Button) findViewById(R.id.btn_show_ancill);
-		btn_show_ancill = ui.button(btn_show_ancill, w_btn, 100, col3, row9);
+		btn_show_ancill = ui.button(btn_show_ancill, 100, 100, col3, row9);
 		btn_show_ancill.setOnClickListener(btn_show_ancill_onclick);
+		btn_show_ancill.setText("\ud83d\udcce");
 
 		// btn_select = (Button) findViewById(R.id.btn_select);
 		// btn_select = ui.button(btn_select, 100, 100, col2, row9);
@@ -408,7 +411,8 @@ public class Register extends Activity{
 		
 		
         clr_form();
-        Vars.is_loading_form_type=true; 
+        Vars.is_loading_form_type=true;
+        
 
 	}
 	
@@ -507,10 +511,16 @@ public class Register extends Activity{
 					
 					Vars.Type = spi_Type.getSelectedItem().toString()+" , ";
 					
-					Intent intent = new Intent(Register.this, Slector.class);
-					intent.putExtra("selector", 1);
-					intent.putExtra("type_id", position);
-					startActivity(intent);
+					
+					 List<String[]> items_sub_type = access.get_Type(position);
+					
+					if(items_sub_type.size()>=1){
+						
+						Intent intent = new Intent(Register.this, Slector.class);
+						intent.putExtra("selector", 1);
+						intent.putExtra("type_id", position);
+						startActivity(intent);
+					}
 					
 				}
 			}else{
