@@ -106,15 +106,19 @@ public class Slector extends Activity{
 	        for(int i=0 ; i<items_type.size(); i++){
 	        	items_checkbox.add(items_type.get(i)[1]); 
 	        }
-	        Toast.makeText(getApplicationContext(), Vars.last_Type, 
+	        if(Vars.last_Type.trim() != "" || Vars.last_Type!= null ){
+	        	Toast.makeText(getApplicationContext(), Vars.last_Type, 
 					   Toast.LENGTH_LONG).show();	
+	        }
 	    		
 		}else{
 			//items_checkbox.clear();
 			lbl_selector.setText("Ancillary");
 			items_checkbox = access.get_Ancillary();
-			Toast.makeText(getApplicationContext(), Vars.last_Ancillary_Equipment, 
+			if(Vars.last_Ancillary_Equipment.trim() != "" || Vars.last_Ancillary_Equipment != null ){		        
+				Toast.makeText(getApplicationContext(), Vars.last_Ancillary_Equipment, 
 					   Toast.LENGTH_LONG).show();	
+			}
 		}
 		
 			
