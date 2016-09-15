@@ -30,6 +30,7 @@ import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -94,6 +95,10 @@ public class Register extends Activity{
 	List<String[]> items_size1 ;
 	List<String> items_ancillary_equipment;
 	List<String> items_company;
+	
+	
+	//_________________
+	int last_type_select;
 	 
 	Access access = new Access(this);
 	DataEntry data_reg = new DataEntry(this);
@@ -259,8 +264,9 @@ public class Register extends Activity{
 
 		spi_Type = (Spinner) findViewById(R.id.spi_Type);
 		spi_Type = ui.spinner(spi_Type, w_spi_col2, h_spi_col2, col2, row5);
-		//spi_Type.setOnTouchListener(type_select);
+		spi_Type.setOnTouchListener(type_onclick);
 		spi_Type.setOnItemSelectedListener(onselected_type);
+		
 		
 		spi_Position = (Spinner) findViewById(R.id.spi_Position);
 		spi_Position = ui.spinner(spi_Position, w_spi_col2, h_spi_col2, col2,
@@ -416,6 +422,7 @@ public class Register extends Activity{
         clr_form();
         Vars.is_loading_form_type=true;
         
+        last_type_select = 0; 
 
 	}
 	
@@ -502,16 +509,30 @@ public class Register extends Activity{
 		
 	};
 	
+	OnTouchListener type_onclick = new OnTouchListener() {
+		
+		@Override
+		public boolean onTouch(View arg0, MotionEvent arg1) {
+			// TODO Auto-generated method stub
+			spi_Type.setSelected(false);
+			spi_Type.setSelection(0);
+			return false;
+		}
+	};
+	
+	
 	AdapterView.OnItemSelectedListener onselected_type = new AdapterView.OnItemSelectedListener() {
 
 		@Override
 		public void onItemSelected(AdapterView<?> arg0, View arg1, int position,
 				long arg3) {
 			if(Vars.is_loading_form_type && !(spi_Type.getSelectedItem().toString().equalsIgnoreCase(""))){
-				if(GlobalAccess.type_parent_id==-1){
+		/*		if(GlobalAccess.type_parent_id==-1){
 					GlobalAccess.type_parent_id=position;
-				}else {
 					
+				}else {
+			*/		
+				last_type_select=position;
 					Vars.Type = spi_Type.getSelectedItem().toString()+" , ";
 					
 					
@@ -523,7 +544,8 @@ public class Register extends Activity{
 						intent.putExtra("selector", 1);
 						intent.putExtra("type_id", position);
 						startActivity(intent);
-					}
+						
+					//}
 					
 				}
 			}else{
@@ -534,7 +556,7 @@ public class Register extends Activity{
 		@Override
 		public void onNothingSelected(AdapterView<?> arg0) {
 			
-			
+		
 		}
 	
 	};
