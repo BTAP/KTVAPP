@@ -533,6 +533,7 @@ public class Register extends Activity{
 				}else {
 			*/		
 				last_type_select=position;
+					Vars.last_Type=Vars.Type;
 					Vars.Type = spi_Type.getSelectedItem().toString()+" , ";
 					
 					
@@ -641,6 +642,7 @@ public class Register extends Activity{
 		 
 			if (arg1.getAction() == (MotionEvent.ACTION_UP)
 					&& arg1.getAction() != (MotionEvent.ACTION_OUTSIDE)) {
+				Vars.last_Ancillary_Equipment= Vars.Ancillary_Equipment;
 				Vars.Ancillary_Equipment=""; 
 				Intent intent = new Intent(Register.this, Slector.class);
 				intent.putExtra("selector", 2);
