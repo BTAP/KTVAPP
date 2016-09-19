@@ -119,15 +119,17 @@ public class Slector extends Activity{
 		        	if(arry_tem_string.length>0){
 		   
 			        	tem_value =arry_tem_string[0] ;
-			        	for(int i=1 ; i < arry_tem_string.length ; i++){
+			        	for(int i=1 ; i < (arry_tem_string.length-1) ; i++){
 		        			
-		        			tem_value+= " , " + arry_tem_string[i];
+		        			tem_value += " , " + arry_tem_string[i];
 		        		}
 		        	}else{
 		        		tem_value="";
 		        	}
 		        }
-	        }catch(Exception e){}
+	        }catch(Exception e){
+	        	tem_value="";
+	        }
 	    		
 		}else{
 			//items_checkbox.clear();
@@ -142,7 +144,7 @@ public class Slector extends Activity{
 		        	if(arry_tem_string.length>0){
 		   
 			        	tem_value =arry_tem_string[0] ;
-			        	for(int i=1 ; i < arry_tem_string.length ; i++){
+			        	for(int i=1 ; i < (arry_tem_string.length-1) ; i++){
 		        			
 		        			tem_value+= " , " + arry_tem_string[i];
 		        		}
@@ -150,7 +152,9 @@ public class Slector extends Activity{
 		        		tem_value="";
 		        	}
 				}
-			}catch(Exception e){} 
+			}catch(Exception e){
+				tem_value="";
+			} 
 		}
 		
 			
