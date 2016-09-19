@@ -113,7 +113,19 @@ public class Slector extends Activity{
 		        if(Vars.last_Type.trim() != "" || Vars.last_Type!= null ){
 		        	//Toast.makeText(getApplicationContext(), Vars.last_Type, 
 					//	   Toast.LENGTH_LONG).show();	
-	        		tem_value = Vars.last_Type; 	
+	        		//tem_value = Vars.last_Type;
+	        		 
+		        	String [] arry_tem_string = Vars.last_Type.split(",");
+		        	if(arry_tem_string.length>0){
+		   
+			        	tem_value =arry_tem_string[0] ;
+			        	for(int i=1 ; i < arry_tem_string.length ; i++){
+		        			
+		        			tem_value+= " , " + arry_tem_string[i];
+		        		}
+		        	}else{
+		        		tem_value="";
+		        	}
 		        }
 	        }catch(Exception e){}
 	    		
@@ -125,7 +137,18 @@ public class Slector extends Activity{
 				if(Vars.last_Ancillary_Equipment.trim() != "" || Vars.last_Ancillary_Equipment != null ){		        
 					//Toast.makeText(getApplicationContext(), Vars.last_Ancillary_Equipment, 
 					//	   Toast.LENGTH_LONG).show();
-					tem_value = Vars.last_Ancillary_Equipment;
+					//tem_value = Vars.last_Ancillary_Equipment;
+			     	String [] arry_tem_string = Vars.last_Ancillary_Equipment.split(",");
+		        	if(arry_tem_string.length>0){
+		   
+			        	tem_value =arry_tem_string[0] ;
+			        	for(int i=1 ; i < arry_tem_string.length ; i++){
+		        			
+		        			tem_value+= " , " + arry_tem_string[i];
+		        		}
+		        	}else{
+		        		tem_value="";
+		        	}
 				}
 			}catch(Exception e){} 
 		}
