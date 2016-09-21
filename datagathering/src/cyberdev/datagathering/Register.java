@@ -672,6 +672,11 @@ public class Register extends Activity{
 		 spi_Size1.setSelected(false);
 		 spi_Ancillary_Equipment.setSelected(false);
 		 spi_Company.setSelected(false);
+		 Vars.Type=""; 
+		 Vars.last_Type=""; 
+		 Vars.Ancillary_Equipment="";
+		 Vars.last_Ancillary_Equipment=""; 
+		 Vars.Attachment="";
 		
 		
 	}
